@@ -1,6 +1,7 @@
 def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip.to_i
+<<<<<<< HEAD
   index = input_to_index(input)
     if valid_move?(board, index)&&index.between?(0,8)
       move(board, index)
@@ -8,6 +9,15 @@ def turn(board)
     else
       turn(board)
     end
+=======
+  input_to_index(input)
+    if valid_move?(board, input)
+      move(board, index, token ="X")
+      display_board(board)
+    else
+      return "invalid"
+      turn(board)
+>>>>>>> f3927c6b8ecafafd098dbb040f602f5fff43ca78
 end
 
 def move(board, index, token = "X")
@@ -23,8 +33,13 @@ def display_board(board)
 end
 
 def valid_move?(board, index)
+<<<<<<< HEAD
   index.to_i 
   if position_taken?(board, index) == false && index.between?(0,8)
+=======
+  value = index.to_i 
+  if position_taken?(board, index) == false && value.between?(0,8)
+>>>>>>> f3927c6b8ecafafd098dbb040f602f5fff43ca78
     true
   else
     false
